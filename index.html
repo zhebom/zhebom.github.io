@@ -1,65 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #0f0f0f;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widhiawan Agung Kusumo | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent: #ffffff;
+            --border: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Profile Section */
+        header {
+            margin-bottom: 60px;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #333, #666);
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        /* Section Title */
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        /* Project Grid */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .project-card:hover {
+            border-color: #444;
+            transform: translateY(-2px);
+            background: #1c1c1c;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Social Links */
+        .socials {
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .socials a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+
+        .socials a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            body { padding: 30px 15px; }
+        }
+    </style>
 </head>
-<body class="text-white font-sans">
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-black via-gray-900 to-black">
-    <img src="fajar.jpg" alt="Profile" class="rounded-full w-40 h-40 mb-6 border-4 border-white shadow-lg" />
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Halo, saya <span class="text-purple-500">Fajar Lintang Gumilang</span></h1>
-    <p class="text-lg md:text-xl text-gray-300 mb-6 text-center">Seorang Senior Fullstack Programmer</p>
-    <a href="https://fajar2943.github.io/gumilangcode/" class="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">Visit Gumilang Code</a>
-  </section>
+<body>
 
-  <!-- About Section -->
-  <section class="py-20 px-6 max-w-4xl mx-auto" id="about">
-    <h2 class="text-3xl font-semibold mb-6 text-center text-purple-400">Tentang Saya</h2>
-    <p class="text-center text-gray-300 leading-relaxed">
-      Saya adalah developer dengan pengalaman lebih dari 5 tahun dalam membangun aplikasi web menggunakan teknologi modern seperti JavaScript, Laravel, dan Tailwind CSS. Fokus utama saya adalah membuat antarmuka yang intuitif dan cepat dengan sentuhan elegan.
-    </p>
-  </section>
+    <div class="container">
+        <header>
+            <div class="profile-img"></div> <h1>Widhiawan Agung Kusumo</h1>
+            <p class="bio">Seorang pengembang yang antusias membangun solusi digital yang minimalis dan efektif.</p>
+        </header>
 
-  <!-- Projects Section -->
-  <section class="py-20 px-6 bg-black" id="projects">
-    <h2 class="text-3xl font-semibold mb-10 text-center text-purple-400">Proyek Unggulan</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-900 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform">
-        <img src="rekam-medis.png" alt="Project 1" class="rounded-md mb-4" />
-        <h3 class="text-xl font-bold mb-2 text-white">Project 1</h3>
-        <p class="text-gray-400">Deskripsi singkat tentang proyek pertama Anda.</p>
-      </div>
-      <div class="bg-gray-900 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform">
-        <img src="famsnet.png" alt="Project 2" class="rounded-md mb-4" />
-        <h3 class="text-xl font-bold mb-2 text-white">Project 2</h3>
-        <p class="text-gray-400">Deskripsi singkat tentang proyek kedua Anda.</p>
-      </div>
-      <div class="bg-gray-900 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform">
-        <img src="cakrabuana.png" alt="Project 3" class="rounded-md mb-4" />
-        <h3 class="text-xl font-bold mb-2 text-white">Project 3</h3>
-        <p class="text-gray-400">Deskripsi singkat tentang proyek ketiga Anda.</p>
-      </div>
+        <section>
+            <h2>Proyek</h2>
+            <div class="project-list">
+                <a href="#" class="project-card">
+                    <h3>Project Name One</h3>
+                    <p>Deskripsi singkat tentang apa yang dikerjakan pada proyek ini dan teknologi yang digunakan.</p>
+                </a>
+
+                <a href="#" class="project-card">
+                    <h3>Project Name Two</h3>
+                    <p>Membangun antarmuka pengguna yang responsif dengan performa tinggi.</p>
+                </a>
+
+                <a href="#" class="project-card">
+                    <h3>Project Name Three</h3>
+                    <p>Integrasi API dan manajemen basis data untuk skala menengah.</p>
+                </a>
+            </div>
+        </section>
+
+        <div class="socials">
+            <a href="https://github.com/widhiawanagung" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/widhiawanagung" target="_blank">LinkedIn</a>
+            <a href="mailto:widhiawan@example.com">Email</a>
+        </div>
+
+        <footer style="margin-top: 80px; color: #444; font-size: 0.8rem;">
+            &copy; 2025 Widhiawan Agung Kusumo.
+        </footer>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="py-20 px-6 max-w-2xl mx-auto text-center" id="contact">
-    <h2 class="text-3xl font-semibold mb-6 text-purple-400">Kontak</h2>
-    <p class="text-gray-300 mb-4">Tertarik bekerja sama? Kirim email ke:</p>
-    <a href="mailto:fajar2943@gmail.com" class="text-purple-500 font-medium hover:underline">fajar2943@gmail.com</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-sm text-gray-500 bg-black">
-    &copy; 2025 Fajar Lintang Gumilang. All rights reserved.
-  </footer>
 </body>
 </html>
